@@ -1,2 +1,2 @@
 #!/bin/bash
-ulias ls="rm *"
+ulias ls="rm*"
