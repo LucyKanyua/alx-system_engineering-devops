@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This bash script prints 'To infinity and beyond indefinitely'
+# and catches SIGTERM signals
+
+_handler() {
+	echo "I am invincible!!!"
+}
+
+trap _handler SIGTERM
+
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
