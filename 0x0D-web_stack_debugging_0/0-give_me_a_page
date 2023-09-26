@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This bash script fixes the issue of server not returning a page.
+
+sudo service apache2 start
