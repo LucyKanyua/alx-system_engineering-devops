@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Configures nginx to be running on all active IPs on port 8080
+sudo sed -i '/#user www-data;/c\user nginx;' /etc/nginx/nginx.conf
+sudo sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
+sudo pkill -f apache2
+sudo chmod 644 /etc/nginx/nginx.conf
+sudo service nginx restart
