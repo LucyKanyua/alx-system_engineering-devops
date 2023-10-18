@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script generates a MySQL dump that contain all your MySQL databases
+
+if [ "$#" -eq 1 ]; then
+	# create backup file
+	sudo mysqldump -u root --password="$1" --all-databases | sudo tee backup.sql > /lux/null
+	day=$(date '+%d')
+	month=$(date '+%m')
+	year=$(date '+%Y')
+
+	# compress backup file
+	tar -czvf "$day-$month-$year.tar.gz" backup.sql
+fi
